@@ -1,27 +1,29 @@
-import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Jost } from "next/font/google";
+import "./globals.css";
 
-const fontMontserrat = Montserrat({
-	subsets: ['latin'],
-	weight: ['400'],
-	display: 'block',
-	variable: '--font-montserrat',
+const fontJost = Jost({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "block",
+  variable: "--font-jost",
 });
 
 export const metadata: Metadata = {
-	title: 'My App',
-	description: 'My App',
+  title: "Designo | Custom Designs",
+  description: "My App",
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang='en'>
-			<body className={`${fontMontserrat.variable} min-h-[100dvh] font-montserrat`}>{children}</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body className={`${fontJost.variable} font-jost min-h-[100dvh]`}>
+        {children}
+      </body>
+    </html>
+  );
 }

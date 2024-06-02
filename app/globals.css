@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .link {
+    @apply relative py-1 md:px-[1px];
+  }
+
+  .link::after {
+    content: "";
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+
+    @apply absolute bottom-0 left-0 h-[2px]  w-full bg-Peach;
+  }
+
+  .link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .active::after {
+    transform: scaleX(1);
+  }
+
+  .active {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .sectionX {
+    @apply px-6 md:px-10;
+  }
+}

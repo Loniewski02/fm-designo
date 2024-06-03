@@ -2,7 +2,7 @@ import About from "./components/About";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <Header />
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

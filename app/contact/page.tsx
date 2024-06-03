@@ -1,9 +1,5 @@
-"use client";
-import { usePathname } from "next/navigation";
-
-const page = () => {
-  const pathname = usePathname();
-  return <h1>{pathname}</h1>;
+const Page = () => {
+  return <h1>hello</h1>;
 };
 
-export default page;
+export default Page;

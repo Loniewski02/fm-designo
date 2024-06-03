@@ -5,9 +5,13 @@ import Socials from "../UI/Socials";
 import LocationItem from "./LocationItem";
 import Wrapper from "./Wrapper";
 
-const Footer = () => {
+type Props = { expanded?: boolean };
+
+const Footer: React.FC<Props> = ({ expanded }) => {
   return (
-    <footer className="sectionX bg-Black py-16 md:py-[80px]">
+    <footer
+      className={`${expanded && "pt-[250px] md:pt-[160px] lg:pt-[144px]"} sectionX bg-Black py-16 md:py-[80px]`}
+    >
       <Wrapper>
         <FooterNav />
         <div className="mb-8 mt-10 hidden h-px w-full bg-LightGrey opacity-20 md:block" />

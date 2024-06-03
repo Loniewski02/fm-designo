@@ -24,6 +24,10 @@ const config: Config = {
       },
       fontSize: {
         14: ["14px", "14px"],
+        15: ["15px", "25px"],
+        28: ["28px", "36px"],
+        32: ["32px", "36px"],
+        40: ["40px", "48px"],
       },
       keyframes: {
         hide: {
@@ -48,6 +52,9 @@ const config: Config = {
         show: "show .3s ease-in-out forwards",
         hideNavItems: "hideNavItems .3s ease-in-out forwards",
         showNavItems: "showNavItems .3s ease-in-out forwards",
+      },
+      borderRadius: {
+        15: "15px",
       },
     },
   },

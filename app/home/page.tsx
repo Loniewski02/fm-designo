@@ -1,3 +1,4 @@
+import GetInTouchSection from "../components/layout/GetInTouchSection";
 import About from "./components/About";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
@@ -8,6 +9,7 @@ const Page = () => {
       <Header />
       <Projects />
       <About />
+      <GetInTouchSection />
     </>
   );
 };

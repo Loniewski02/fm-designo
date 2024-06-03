@@ -26,7 +26,6 @@ const Navigation = () => {
         setIsNavShown(true);
         setIsNavItemsShown(false);
       }
-      console.log(isNavShown);
 
       setLastScrollY(window.scrollY);
     };
@@ -54,7 +53,7 @@ const Navigation = () => {
         <Link
           href="/home"
           aria-label="Home Page"
-          className={`text-GraylishDarkBlue block`}
+          className={`block text-Black`}
         >
           <img src={logo.src} alt="" className="w-full max-w-[202px]" />
         </Link>
@@ -62,7 +61,7 @@ const Navigation = () => {
         <div
           className={`${
             isNavItemsShown ? "animate-showNavItems" : "animate-hideNavItems"
-          } bg-GraylishDarkBlue fixed left-0 right-0 top-[100px] h-full bg-[rgba(0,0,0,0.5)] md:static md:block md:bg-transparent `}
+          } fixed left-0 right-0 top-[100px] h-full bg-[rgba(0,0,0,0.5)] md:static md:block md:bg-transparent `}
         >
           <div className="flex flex-col items-start gap-6 bg-Black px-6 py-12 md:flex-row md:gap-10 md:bg-transparent md:p-0">
             {ROUTES.map((route) => (

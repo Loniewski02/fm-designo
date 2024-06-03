@@ -19,6 +19,7 @@ const Socials = () => {
         <a
           href={item.url}
           key={item.id}
+          aria-label={item.name}
           className="block text-Peach transition hover:-translate-y-[2px] hover:text-LightPeach"
         >
           {item.ico}

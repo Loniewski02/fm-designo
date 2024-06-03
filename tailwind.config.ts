@@ -23,8 +23,10 @@ const config: Config = {
         xs: "375px",
       },
       fontSize: {
+        base: ["16px", "26px"],
         14: ["14px", "14px"],
         15: ["15px", "25px"],
+        20: ["20px", "26px"],
         28: ["28px", "36px"],
         32: ["32px", "36px"],
         40: ["40px", "48px"],

@@ -8,7 +8,7 @@ type Props = {
 
 const MainContainer: React.FC<Props> = ({ children, expanded }) => {
   return (
-    <main className="relative overflow-x-hidden">
+    <main className="relative overflow-x-clip">
       <Navigation />
       {children}
       <Footer expanded={expanded} />

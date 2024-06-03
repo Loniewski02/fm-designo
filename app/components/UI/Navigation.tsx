@@ -24,7 +24,9 @@ const Navigation = () => {
         setIsNavItemsShown(false);
       } else {
         setIsNavShown(true);
+        setIsNavItemsShown(false);
       }
+      console.log(isNavShown);
 
       setLastScrollY(window.scrollY);
     };
@@ -69,7 +71,7 @@ const Navigation = () => {
                 href={route.url}
                 aria-label={`${route.name} Page`}
                 onClick={hideMobileMenuHandler}
-                className={`${pathname.includes(route.url) && "active"} link md:text-14 text-2xl uppercase tracking-[2px] text-White md:text-DarkGrey`}
+                className={`${pathname.includes(route.url) && "active"} link text-2xl uppercase tracking-[2px] text-White md:text-14 md:text-DarkGrey`}
               >
                 {route.name}
               </Link>

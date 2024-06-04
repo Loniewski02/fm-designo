@@ -20,7 +20,7 @@ const GetInTouchSection = () => {
           <h2 className="mb-3 text-32 font-medium md:text-40">
             Let’s talk about your project
           </h2>
-          <p className="mb-8 text-15 md:text-base">
+          <p className="mb-8 text-15 md:text-base lg:mb-0">
             Ready to take it to the next level? Contact us today and find out
             how our expertise can help your business grow.
           </p>

@@ -2,7 +2,7 @@
 
 import FooterNav from "../UI/FooterNavigation";
 import Socials from "../UI/Socials";
-import LocationItem from "./LocationItem";
+import LocationItem from "./Info";
 import Wrapper from "./Wrapper";
 
 type Props = { expanded?: boolean };

@@ -43,9 +43,7 @@ const Navigation = () => {
       } else {
         setIsNavShown(true);
       }
-      if (window.innerWidth >= 768) {
-        setIsNavItemsShown(true);
-      } else {
+      if (window.innerWidth < 768) {
         setIsNavItemsShown(false);
       }
 
@@ -64,7 +62,9 @@ const Navigation = () => {
   };
 
   const hideMobileMenuHandler = () => {
-    setIsNavItemsShown(false);
+    if(window.innerWidth<768){
+      setIsNavItemsShown(false);
+    }
   };
 
   return (

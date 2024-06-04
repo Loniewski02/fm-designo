@@ -15,13 +15,13 @@ const FooterNavigation = () => {
         <img src={logo.src} alt="" className="w-full max-w-[202px]" />
       </Link>
       <div className="block h-px w-full bg-LightGrey opacity-20 md:hidden" />
-      <div className="flex flex-col gap-8 text-center md:flex-row">
+      <div className="flex flex-col items-center gap-8 text-center md:flex-row">
         {MAIN_ROUTES.map((route) => (
           <Link
             href={route.url}
             aria-label={route.name + " page"}
             key={route.id}
-            className={`${pathname===route.url && "active"} link text-14 uppercase tracking-[2px] text-White`}
+            className={`${pathname === route.url && "active"} link w-max text-14 uppercase tracking-[2px] text-White`}
           >
             {route.name}
           </Link>

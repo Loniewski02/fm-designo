@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { ROUTES } from "../../routes";
+import { MAIN_ROUTES } from "../../routes";
 
 import Wrapper from "../layout/Wrapper";
 import BurgerBtn from "./BurgerBtn";
@@ -64,13 +64,13 @@ const Navigation = () => {
           } fixed left-0 right-0 top-[100px] h-full bg-[rgba(0,0,0,0.5)] md:static md:block md:bg-transparent `}
         >
           <div className="flex flex-col items-start gap-6 bg-Black px-6 py-12 md:flex-row md:gap-10 md:bg-transparent md:p-0">
-            {ROUTES.map((route) => (
+            {MAIN_ROUTES.map((route) => (
               <Link
                 key={route.id}
                 href={route.url}
                 aria-label={`${route.name} Page`}
                 onClick={hideMobileMenuHandler}
-                className={`${pathname.includes(route.url) && "active"} link text-2xl uppercase tracking-[2px] text-White md:text-14 md:text-DarkGrey`}
+                className={`${pathname === route.url && "active"} link text-2xl uppercase tracking-[2px] text-White md:text-14 md:text-DarkGrey`}
               >
                 {route.name}
               </Link>

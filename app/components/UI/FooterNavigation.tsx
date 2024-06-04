@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { ROUTES } from "@/app/routes";
+import { MAIN_ROUTES } from "@/app/routes";
 
 import logo from "@/public/assets/shared/desktop/logo-light.png";
 
@@ -16,12 +16,12 @@ const FooterNavigation = () => {
       </Link>
       <div className="block h-px w-full bg-LightGrey opacity-20 md:hidden" />
       <div className="flex flex-col gap-8 text-center md:flex-row">
-        {ROUTES.map((route) => (
+        {MAIN_ROUTES.map((route) => (
           <Link
             href={route.url}
             aria-label={route.name + " page"}
             key={route.id}
-            className={`${pathname.includes(route.url) && "active"} link text-14 uppercase tracking-[2px] text-White`}
+            className={`${pathname===route.url && "active"} link text-14 uppercase tracking-[2px] text-White`}
           >
             {route.name}
           </Link>

@@ -10,6 +10,7 @@ const Locations = () => {
         <h2 className="invisible absolute h-0 w-0">find us</h2>
         {LOCATIONS.map((location, index) => (
           <LocationItem
+            key={location.id}
             reversed={index % 2 != 0}
             country={location.country}
             office={location.office}

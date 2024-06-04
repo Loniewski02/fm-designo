@@ -110,6 +110,7 @@ export const GRAPHIC_DESIGN_PROJECTS: DesignProject[] = [
 
 export const LOCATIONS = [
   {
+    id: "loaction1",
     country: "Canada",
     office: {
       name: "Designo Central Office",
@@ -124,6 +125,7 @@ export const LOCATIONS = [
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23098.39292195037!2d-79.40205552066557!3d43.64194476366854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d9a0737d9f%3A0xbc1ae74f23fabf4e!2sWellington%20St%20W%2C%20Toronto%2C%20ON%2C%20Kanada!5e0!3m2!1spl!2spl!4v1717517392396!5m2!1spl!2spl",
   },
   {
+    id: "loaction2",
     country: "Australia",
     office: {
       name: "Designo AU Office",
@@ -138,6 +140,7 @@ export const LOCATIONS = [
     map: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31799.031540976845!2d151.61789067367695!3d-33.096950257982115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1717518012584!5m2!1spl!2spl",
   },
   {
+    id: "loaction3",
     country: "United Kingdom",
     office: {
       name: "Designo UK Office",

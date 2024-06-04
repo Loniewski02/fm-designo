@@ -16,3 +16,19 @@ type DesignProject = {
   desc: string;
   img: string;
 };
+
+type LocationT = {
+  id: string;
+  country: string;
+  office: {
+    name: string;
+    adress1: string;
+    adress2: string;
+  };
+  contact: {
+    name: string;
+    phone: string;
+    email: string;
+  };
+  map: string;
+};

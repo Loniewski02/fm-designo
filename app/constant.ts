@@ -108,7 +108,7 @@ export const GRAPHIC_DESIGN_PROJECTS: DesignProject[] = [
   },
 ];
 
-export const LOCATIONS = [
+export const LOCATIONS: LocationT[] = [
   {
     id: "loaction1",
     country: "Canada",

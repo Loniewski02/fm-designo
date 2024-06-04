@@ -40,20 +40,10 @@ const config: Config = {
           "0%": { top: "-122px" },
           "100%": { top: "0" },
         },
-        hideNavItems: {
-          "0%": { top: "100px", oapcity: "0" },
-          "100%": { top: "-100%", opacity: "1" },
-        },
-        showNavItems: {
-          "0%": { top: "-100%", opacity: "0" },
-          "100%": { top: "100px", opacity: "1" },
-        },
       },
       animation: {
         hide: "hide .3s ease-in-out forwards",
         show: "show .3s ease-in-out forwards",
-        hideNavItems: "hideNavItems .3s ease-in-out forwards",
-        showNavItems: "showNavItems .3s ease-in-out forwards",
       },
       borderRadius: {
         15: "15px",

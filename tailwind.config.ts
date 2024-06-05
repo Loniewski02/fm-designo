@@ -33,6 +33,9 @@ const config: Config = {
         40: ["40px", "48px"],
       },
       keyframes: {
+        spin: {
+          to: { transform: "rotate(360deg)" },
+        },
         hide: {
           "0%": { top: "0" },
           "100%": { top: "-122px" },
@@ -43,6 +46,7 @@ const config: Config = {
         },
       },
       animation: {
+        spin: "spin 1s linear infinite",
         hide: "hide .3s ease-in-out forwards",
         show: "show .3s ease-in-out forwards",
       },

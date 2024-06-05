@@ -40,16 +40,16 @@
     @apply px-6 md:px-10;
   }
 
+  .sectionY {
+    @apply py-[60px] lg:py-20;
+  }
+
   .sectionInnerX {
     @apply px-6 md:px-[58px] lg:px-24;
   }
 
   .sectionInnerY {
     @apply py-16 md:py-[72px];
-  }
-
-  .sectionY {
-    @apply py-[60px] lg:py-20;
   }
 
   .headerY {

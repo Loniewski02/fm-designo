@@ -13,7 +13,7 @@ const DesignProject: React.FC<DesignProject> = ({ title, url, img, desc }) => {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-4 bg-[#ffad9b27] px-[30px] py-8 text-center transition group-hover:bg-Peach md:w-1/2 lg:w-full">
+      <div className="bg-VeryLightPeach flex flex-col items-center justify-center gap-4 px-[30px] py-8 text-center transition group-hover:bg-Peach md:w-1/2 lg:w-full">
         <h3 className="text-20 font-medium uppercase tracking-[5px] text-Peach transition group-hover:text-White">
           {title}
         </h3>

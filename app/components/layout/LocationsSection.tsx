@@ -18,14 +18,16 @@ const DATA = [
   { id: "uk", img: <Uk />, title: "united kingdom", url: "/locations#uk" },
 ];
 
-const ContactLoctions = () => {
+const LocationsSection: React.FC<{ padding?: boolean }> = ({ padding }) => {
   const router = useRouter();
   const navigateHandler = (url: string) => {
     router.push(url);
   };
 
   return (
-    <section className="sectionX pb-[120px] pt-[60px] lg:pb-[160px] lg:pt-[80px]">
+    <section
+      className={`sectionX ${padding ? "pb-[120px] pt-[60px] lg:pb-[160px] lg:pt-20" : "sectionY "}`}
+    >
       <Wrapper className="relative flex flex-col items-center gap-12 md:gap-20 lg:flex-row lg:justify-center">
         <h2 className="invisible absolute h-0 w-0">our locations</h2>
         {DATA.map((item, index) => (
@@ -53,4 +55,4 @@ const ContactLoctions = () => {
   );
 };
 
-export default ContactLoctions;
+export default LocationsSection;

@@ -3,7 +3,7 @@ import Leaf from "@/public/assets/shared/desktop/bg-pattern-leaf.svg";
 
 type Props = { reversed?: boolean; top: string; rotated?: boolean };
 
-const BgPatternLeaf: React.FC<Props> = ({ reversed, top, rotated }) => {
+const BgPatternLeaf: React.FC<Props> = ({ reversed, top, rotated, }) => {
   return (
     <Wrapper className="relative">
       <Leaf

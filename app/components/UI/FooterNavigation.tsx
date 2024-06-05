@@ -12,7 +12,9 @@ const FooterNavigation = () => {
   return (
     <section className="mb-8 flex flex-col items-center gap-8 md:mb-0 md:flex-row md:justify-between">
       <Link href="/home" aria-label="home page" className="block">
-        <img src={logo.src} alt="" className="w-full max-w-[202px]" />
+        <h2 aria-label="designo">
+          <img src={logo.src} alt="" className="w-full max-w-[202px]" />
+        </h2>
       </Link>
       <div className="block h-px w-full bg-LightGrey opacity-20 md:hidden" />
       <div className="flex flex-col items-center gap-8 text-center md:flex-row">

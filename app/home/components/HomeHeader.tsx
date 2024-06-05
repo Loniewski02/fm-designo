@@ -6,7 +6,7 @@ import Circle from "../../../public/assets/home/desktop/bg-pattern-hero-home.svg
 import phoneImg from "@/public/assets/home/desktop/image-hero-phone.png";
 import Button from "@/app/components/UI/Button";
 
-const Header = () => {
+const HomeHeader = () => {
   const router = useRouter();
 
   const redirectHandler = () => {
@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className="md:sectionX headerY">
-      <Wrapper className="sectionX relative flex flex-col items-center overflow-hidden bg-Peach pt-[80px] md:rounded-15 lg:px-24 lg:py-[145px]">
+      <Wrapper className="sectionInnerX relative flex flex-col items-center overflow-hidden bg-Peach pt-[80px] md:rounded-15 lg:py-[145px]">
         <Circle className="absolute -right-[280px] top-[100px] md:-right-[145px] lg:right-0 lg:top-0" />
         <div className="z-10 flex w-full max-w-[327px] flex-col items-center text-center text-White md:max-w-none  lg:items-start lg:text-left">
           <h1 className="mb-[14px] text-32 font-medium md:mb-6 md:max-w-[573px] md:text-5xl lg:max-w-[540px]">
@@ -37,4 +37,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;

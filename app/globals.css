@@ -31,14 +31,28 @@
 }
 
 @layer utilities {
+  .magic {
+    @apply bg-[#1d1c1e85];
+    backdrop-filter: blur(20px);
+  }
+
   .sectionX {
     @apply px-6 md:px-10;
   }
+
+  .sectionInnerX {
+    @apply px-6 md:px-[58px] lg:px-24;
+  }
+
+  .sectionInnerY {
+    @apply py-16 md:py-[72px];
+  }
+
   .sectionY {
-    @apply py-[60px] lg:py-[80px];
+    @apply py-[60px] lg:py-20;
   }
 
   .headerY {
-    @apply pb-[60px] pt-[30px] lg:pb-[80px];
+    @apply pb-[60px] pt-[30px] lg:pb-20;
   }
 }

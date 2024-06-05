@@ -11,6 +11,7 @@ const Locations = () => {
         {LOCATIONS.map((location, index) => (
           <LocationItem
             key={location.id}
+            id={location.id}
             reversed={index % 2 != 0}
             country={location.country}
             office={location.office}

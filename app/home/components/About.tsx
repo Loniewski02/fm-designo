@@ -30,8 +30,9 @@ const About = () => {
     <section className="sectionX sectionY">
       <Wrapper className="flex flex-col items-center gap-20 md:gap-[52px] xl:flex-row">
         <h2 className="invisible absolute">about</h2>
-        {DATA.map((item) => (
+        {DATA.map((item, index) => (
           <AboutItem
+            index={index}
             key={item.id}
             title={item.title}
             text={item.text}

@@ -2,6 +2,7 @@ import Info from "@/app/components/layout/Info";
 import Circles from "@/public/assets/shared/desktop/bg-pattern-three-circles.svg";
 
 type Props = {
+  id: string;
   country: string;
   office: { name: string; adress1: string; adress2: string };
   contact: { name: string; phone: string; email: string };
@@ -14,10 +15,11 @@ const LocationItem: React.FC<Props> = ({
   office,
   contact,
   map,
+  id,
   reversed,
 }) => {
   return (
-    <article className="flex flex-col md:gap-8 lg:grid lg:grid-cols-3">
+    <article id={id} className="flex flex-col md:gap-8 lg:grid lg:grid-cols-3">
       <div
         className={`${reversed ? "lg:order-2" : "lg:order-1 "} relative order-2 overflow-hidden bg-[#FDF3F0] px-4 py-20 text-center md:rounded-15 md:px-[74px] md:py-[88px] md:text-left lg:col-span-2 lg:px-[95px]`}
       >

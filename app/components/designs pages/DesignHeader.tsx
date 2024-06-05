@@ -10,7 +10,7 @@ type Props = {
 const DesignHeader: React.FC<Props> = ({ title, text, reversed }) => {
   return (
     <header className="md:sectionX headerY">
-      <Wrapper className="sectionX relative flex flex-col items-center gap-6 overflow-hidden bg-Peach py-[104px] md:rounded-15 md:py-16">
+      <Wrapper className="sectionInnerX sectionInnerY relative flex flex-col items-center gap-6 overflow-hidden bg-Peach md:rounded-15 ">
         <Circles
           className={`absolute right-0 top-0 -scale-y-[1] md:-right-[146px] md:top-1/2 md:-translate-y-1/2  ${reversed ? "lg:-left-1/2 lg:right-[initial] lg:translate-x-1/2 lg:scale-y-[1]" : "lg:right-0"}`}
         />

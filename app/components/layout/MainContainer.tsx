@@ -1,4 +1,4 @@
-import Navigation from "../UI/Navigation";
+import Navigation from "../UI/Navigation/Navigation";
 import Footer from "./Footer";
 
 type Props = {

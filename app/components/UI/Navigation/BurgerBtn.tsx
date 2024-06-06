@@ -20,7 +20,7 @@ const BurgerBtn: React.FC<Props> = ({ onClick, isShown }) => {
             y: isShown ? 8 : 0,
             rotate: isShown ? 45 : 0,
           }}
-          className={`${barClasses} top-0`}
+          className={`${barClasses} $ top-0`}
         />
         <motion.span
           animate={{ opacity: isShown ? 0 : 1 }}

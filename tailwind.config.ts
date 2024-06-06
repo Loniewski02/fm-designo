@@ -44,11 +44,21 @@ const config: Config = {
           "0%": { top: "-122px" },
           "100%": { top: "0" },
         },
+        hideNavItems: {
+          "0%": { top: "100px" },
+          "100%": { top: "-100%" },
+        },
+        showNavItems: {
+          "0%": { top: "-100%" },
+          "100%": { top: "100px", opacity: "1" },
+        },
       },
       animation: {
         spin: "spin 1s linear infinite",
         hide: "hide .3s ease-in-out forwards",
         show: "show .3s ease-in-out forwards",
+        hideNavItems: "hideNavItems .3s ease-in-out forwards",
+        showNavItems: "showNavItems .3s ease-in-out forwards",
       },
       borderRadius: {
         15: "15px",

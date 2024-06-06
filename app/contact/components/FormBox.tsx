@@ -37,7 +37,7 @@ const FormBox: React.FC<Props> = ({
           onBlur={onBlur}
           onChange={onChange}
           value={value}
-          className="peer w-full bg-transparent px-[14px] pb-4 text-15 font-medium text-White outline-none md:px-6"
+          className="peer w-full bg-transparent px-[14px] pb-4 text-15 font-medium text-White outline-none autofill:bg-black  md:px-6"
         />
       )}
       {message && (
@@ -46,7 +46,7 @@ const FormBox: React.FC<Props> = ({
           onBlur={onBlur}
           onChange={onChange}
           value={value}
-          className="peer block min-h-16 w-full bg-transparent px-[14px] pb-4 text-15 font-medium text-White outline-none md:px-6"
+          className="peer autofill:text-gray-600 block min-h-16 w-full bg-transparent px-[14px] pb-4 text-15 font-medium text-White outline-none  md:px-6"
         />
       )}
       <motion.label

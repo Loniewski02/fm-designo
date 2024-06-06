@@ -8,7 +8,7 @@ import Button from "@/app/components/UI/Button";
 import FormBox from "./FormBox";
 import LoadingSpinner from "@/app/components/UI/LoadingSpinner";
 
-const ContactForm = () => {
+const ContactForm: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
   const [loading, setLoading] = useState(false);
 
   const {
@@ -62,7 +62,6 @@ const ContactForm = () => {
       phoneBlurHandler();
 
       if (!nameIsValid || !emailIsValid || !messageIsValid || !phoneIsValid) {
-        console.log("error du");
         setLoading(false);
         return;
       }
@@ -73,13 +72,14 @@ const ContactForm = () => {
         phone: enteredPhone,
         message: enteredMessage,
       };
-      console.log(data);
 
+      console.log(data);
+      onSuccess();
       setLoading(false);
-      nameReset();
-      emailReset();
-      messageReset();
-      phoneReset();
+      // nameReset();
+      // emailReset();
+      // messageReset();
+      // phoneReset();
     }, 1000);
   };
 

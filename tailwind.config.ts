@@ -56,6 +56,10 @@ const config: Config = {
           "0%,100%": { transform: "transalteY(0)" },
           "50%": { transform: "translateY(-20px)" },
         },
+        showFormMessage: {
+          "0%": { bottom: "-200%" },
+          "100%": { bottom: "0" },
+        },
       },
       animation: {
         spin: "spin 1s linear infinite",
@@ -64,6 +68,7 @@ const config: Config = {
         hideNavItems: "hideNavItems .3s ease-in-out forwards",
         showNavItems: "showNavItems .3s ease-in-out forwards",
         float: "float 4s ease-in-out infinite",
+        showFormMessage: "showFormMessage .3s",
       },
       borderRadius: {
         15: "15px",

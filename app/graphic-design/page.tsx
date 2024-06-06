@@ -18,8 +18,9 @@ const Page = () => {
       />
       <BgPatternLeaf top="-top-[220px]" />
       <DesignProjects>
-        {GRAPHIC_DESIGN_PROJECTS.map((project) => (
+        {GRAPHIC_DESIGN_PROJECTS.map((project, index) => (
           <DesignProject
+            index={index}
             key={project.title}
             title={project.title}
             desc={project.desc}

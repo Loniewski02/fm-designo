@@ -49,6 +49,7 @@ const Navigation = () => {
     setIsNavItemsShown(false);
   };
 
+
   return (
     <nav
       className={`${isNavShown ? "animate-show" : "animate-hide"} ${lastScrollY > 100 && "shadow-sm"} sectionX sticky left-0 right-0 top-0 z-20 bg-White py-8 md:py-10`}

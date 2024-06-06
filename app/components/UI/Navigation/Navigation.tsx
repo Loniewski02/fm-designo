@@ -2,8 +2,10 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { MAIN_ROUTES } from "@/app/routes";
+import { staggerVariants } from "@/app/variants";
 
 import Wrapper from "../../layout/Wrapper";
 import BurgerBtn from "./BurgerBtn";
@@ -64,16 +66,23 @@ const Navigation = () => {
           className={`${isNavItemsShown && "animate-showNavItems"} ${!isInitial && !isNavItemsShown && "animate-hideNavItems"} magic  fixed -top-[100%] left-0 right-0 h-full md:static md:block md:bg-transparent `}
         >
           <div className="flex flex-col items-start gap-6 bg-Black px-6 py-12 md:flex-row md:gap-10 md:bg-transparent md:p-0">
-            {MAIN_ROUTES.map((route) => (
-              <Link
-                key={route.id}
-                href={route.url}
-                aria-label={`${route.name} Page`}
-                onClick={hideMobileMenuHandler}
-                className={`${pathname === route.url && "active"} link text-2xl uppercase tracking-[2px] text-White md:text-14 md:text-DarkGrey`}
+            {MAIN_ROUTES.map((route, index) => (
+              <motion.div
+                variants={staggerVariants}
+                initial="initial"
+                whileInView="animate"
+                custom={index + 1}
               >
-                {route.name}
-              </Link>
+                <Link
+                  key={route.id}
+                  href={route.url}
+                  aria-label={`${route.name} Page`}
+                  onClick={hideMobileMenuHandler}
+                  className={`${pathname === route.url && "active"} link block text-2xl uppercase tracking-[2px] text-White md:text-14 md:text-DarkGrey`}
+                >
+                  {route.name}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>

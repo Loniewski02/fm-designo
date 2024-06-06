@@ -1,3 +1,8 @@
+"use client";
+import { motion } from "framer-motion";
+
+import { staggerVariants } from "@/app/variants";
+
 import Circle from "@/public/assets/shared/desktop/bg-pattern-small-circle.svg";
 
 type Props = {
@@ -9,7 +14,14 @@ type Props = {
 
 const AboutItem: React.FC<Props> = ({ title, text, img, index }) => {
   return (
-    <article className="flex max-w-[330px] flex-col items-center md:max-w-[690px] md:flex-row md:gap-11 xl:max-w-[350px] xl:flex-col xl:gap-0">
+    <motion.article
+      variants={staggerVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      custom={index}
+      className="flex max-w-[330px] flex-col items-center md:max-w-[690px] md:flex-row md:gap-11 xl:max-w-[350px] xl:flex-col xl:gap-0"
+    >
       <div className="relative mb-12 w-max md:mb-0 xl:mb-12">
         <Circle
           className="absolute"
@@ -23,7 +35,7 @@ const AboutItem: React.FC<Props> = ({ title, text, img, index }) => {
         </h3>
         <p className="text-base">{text}</p>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

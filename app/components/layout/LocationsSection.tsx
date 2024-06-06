@@ -1,5 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+
+import { staggerVariants } from "@/app/variants";
+
 import Wrapper from "@/app/components/layout/Wrapper";
 import Canada from "@/public/assets/shared/desktop/illustration-canada.svg";
 import Australia from "@/public/assets/shared/desktop/illustration-australia.svg";
@@ -31,7 +35,12 @@ const LocationsSection: React.FC<{ padding?: boolean }> = ({ padding }) => {
       <Wrapper className="relative flex flex-col items-center gap-12 md:gap-20 lg:flex-row lg:justify-center">
         <h2 className="invisible absolute h-0 w-0">our locations</h2>
         {DATA.map((item, index) => (
-          <div
+          <motion.div
+            variants={staggerVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            custom={index}
             key={item.id}
             className="flex w-max flex-col items-center gap-8 lg:w-[350px]"
           >
@@ -48,7 +57,7 @@ const LocationsSection: React.FC<{ padding?: boolean }> = ({ padding }) => {
             <Button onClick={navigateHandler.bind(null, item.url)} dark>
               see location
             </Button>
-          </div>
+          </motion.div>
         ))}
       </Wrapper>
     </section>

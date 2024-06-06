@@ -68,13 +68,13 @@ const Navigation = () => {
           <div className="flex flex-col items-start gap-6 bg-Black px-6 py-12 md:flex-row md:gap-10 md:bg-transparent md:p-0">
             {MAIN_ROUTES.map((route, index) => (
               <motion.div
+                key={route.id}
                 variants={staggerVariants}
                 initial="initial"
                 whileInView="animate"
                 custom={index + 1}
               >
                 <Link
-                  key={route.id}
                   href={route.url}
                   aria-label={`${route.name} Page`}
                   onClick={hideMobileMenuHandler}

@@ -52,6 +52,10 @@ const config: Config = {
           "0%": { top: "-100%" },
           "100%": { top: "100px", opacity: "1" },
         },
+        float: {
+          "0%,100%": { transform: "transalteY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
       },
       animation: {
         spin: "spin 1s linear infinite",
@@ -59,6 +63,7 @@ const config: Config = {
         show: "show .3s ease-in-out forwards",
         hideNavItems: "hideNavItems .3s ease-in-out forwards",
         showNavItems: "showNavItems .3s ease-in-out forwards",
+        float: "float 4s ease-in-out infinite",
       },
       borderRadius: {
         15: "15px",

@@ -122,7 +122,7 @@ export const LOCATIONS: LocationT[] = [
       phone: "+1 253-863-8967",
       email: "contact@designo.com",
     },
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23098.39292195037!2d-79.40205552066557!3d43.64194476366854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d9a0737d9f%3A0xbc1ae74f23fabf4e!2sWellington%20St%20W%2C%20Toronto%2C%20ON%2C%20Kanada!5e0!3m2!1spl!2spl!4v1717517392396!5m2!1spl!2spl",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44783.4506650752!2d-73.60929253300098!3d45.45034797476251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc9106498f1530d%3A0xa128492b0f6582d9!2s3886%20Rue%20Wellington%2C%20Verdun%2C%20QC%20H4G%201V2%2C%20Kanada!5e0!3m2!1spl!2spl!4v1717759764522!5m2!1spl!2spl",
   },
   {
     id: "australia",
@@ -137,7 +137,7 @@ export const LOCATIONS: LocationT[] = [
       phone: "(02) 6720 9092",
       email: "contact@designo.au",
     },
-    map: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31799.031540976845!2d151.61789067367695!3d-33.096950257982115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1717518012584!5m2!1spl!2spl",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d452933.1900239685!2d153.1392266359131!3d-27.514660958769618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b91445469d7099b%3A0x37b08adfd65f1c24!2s19%20Balonne%20St%2C%20Runcorn%20QLD%204113%2C%20Australia!5e0!3m2!1spl!2spl!4v1717759573777!5m2!1spl!2spl",
   },
   {
     id: "uk",

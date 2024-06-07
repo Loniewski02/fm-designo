@@ -92,6 +92,7 @@ const ContactForm: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
         id="name"
         type="text"
         label="Name"
+        isValid={nameIsValid}
         value={enteredName}
         errorMsg={nameError}
         hasError={nameHasError}
@@ -102,6 +103,7 @@ const ContactForm: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
         id="email"
         type="text"
         label="Email Address"
+        isValid={emailIsValid}
         value={enteredEmail}
         errorMsg={emailError}
         hasError={emailHasError}
@@ -112,6 +114,7 @@ const ContactForm: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
         id="phone"
         type="tel"
         label="Phone"
+        isValid={phoneIsValid}
         value={enteredPhone}
         errorMsg={phoneError}
         hasError={phoneHasError}
@@ -123,6 +126,7 @@ const ContactForm: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
         type="text"
         label="Your Message"
         message
+        isValid={messageIsValid}
         value={enteredMessage}
         errorMsg={messageError}
         hasError={messageHasError}

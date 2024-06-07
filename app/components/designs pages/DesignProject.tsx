@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { staggerVariants } from "@/app/variants";
 
 type Props = {
   title: string;
@@ -11,24 +9,37 @@ type Props = {
   index: number;
 };
 
+export const staggerVariants = {
+  initial: {
+    y: -150,
+    scale: 0,
+  },
+  animate: (index: number) => ({
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: index * 0.1,
+    },
+  }),
+};
+
 const DesignProject: React.FC<Props> = ({ title, url, img, desc, index }) => {
   return (
     <motion.a
       variants={staggerVariants}
+      transition={{ type: "spring" }}
       initial="initial"
       whileInView="animate"
-      viewport={{ once: true }}
       custom={index}
+      viewport={{ once: true }}
       href={url}
-      className="group block w-full max-w-[320px] overflow-hidden rounded-15 shadow-sm transition-transform active:scale-95 md:flex md:max-w-none lg:block lg:max-w-[350px]"
+      className="group block w-full max-w-[320px] overflow-hidden rounded-15 shadow-sm transition-transform md:flex md:max-w-none lg:block lg:max-w-[350px]"
       aria-label={title + " design"}
     >
       <div className="relative max-h-[320px] md:w-1/2 lg:w-full">
         <div className="absolute h-full w-full transform bg-[rgba(29,28,30,0.5)] opacity-0 transition group-hover:opacity-100" />
-        <Image
+        <img
           loading="lazy"
-          width={320}
-          height={350}
           src={img}
           alt={title + " design"} //yeah, I know it is not a good text :S
           className="h-full w-full object-cover"

@@ -29,9 +29,9 @@ const ContactHeader = () => {
               initial={{ bottom: -200 }}
               animate={{ bottom: 0 }}
               exit={{ bottom: -200 }}
-              className="absolute bottom-0 right-1/2 z-50 w-full max-w-[360px] -translate-y-1/2 translate-x-1/2 rounded-15 border border-Black bg-VeryLightPeach px-8 py-3 text-base text-Black lg:right-[96px] lg:max-w-[380px] lg:translate-x-0"
+              className="absolute bottom-0 right-1/2 z-50 w-full max-w-[360px] -translate-y-1/2 translate-x-1/2 rounded-15 border bg-VeryLightPeach px-8 py-3 text-base italic text-Black shadow-sm lg:right-[96px] lg:max-w-[380px] lg:translate-x-0"
             >
-              Message sent
+              Message sent! 😎
             </motion.div>
           )}
         </AnimatePresence>

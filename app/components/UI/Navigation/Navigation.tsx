@@ -5,12 +5,25 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { MAIN_ROUTES } from "@/app/routes";
-import { staggerVariants } from "@/app/variants";
 
 import Wrapper from "../../layout/Wrapper";
 import BurgerBtn from "./BurgerBtn";
 
 import logo from "@/public/assets/shared/desktop/logo-dark.png";
+
+const navItemsVariants = {
+  initial: {
+    y: -50,
+    opacity: 0,
+  },
+  animate: (index: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: index * 0.1,
+    },
+  }),
+};
 
 const Navigation = () => {
   const [isNavItemsShown, setIsNavItemsShown] = useState(false);
@@ -49,7 +62,6 @@ const Navigation = () => {
     setIsNavItemsShown(false);
   };
 
-
   return (
     <nav
       className={`${isNavShown ? "animate-show" : "animate-hide"} ${lastScrollY > 100 && "shadow-sm"} sectionX sticky left-0 right-0 top-0 z-20 bg-White py-8 md:py-10`}
@@ -70,7 +82,7 @@ const Navigation = () => {
             {MAIN_ROUTES.map((route, index) => (
               <motion.div
                 key={route.id}
-                variants={staggerVariants}
+                variants={navItemsVariants}
                 initial="initial"
                 whileInView="animate"
                 custom={index + 1}

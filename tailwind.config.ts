@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         Peach: "#E7816B",
         Black: "#1D1C1E",
+        Blue: "#6BD1E7",
         White: "#FFFFFF",
         VeryLightPeach: "#FDF3F0",
         LightPeach: "#FFAD9B",

@@ -1,7 +1,7 @@
 import { phoneReg, emailReg } from "@/app/regex";
 
 export async function POST(req: any, { params }: any) {
-  let res: FormDataType = {
+  let res: FormDataType | { data: null; status: string } = {
     data: { name: "", email: "", phone: "", msg: "" },
     status: "Invalid Request",
   };
@@ -21,7 +21,7 @@ export async function POST(req: any, { params }: any) {
       !(phone === "" || phoneReg.test(phone))
     ) {
       res = {
-        data: { name: name, email: email, phone: phone, msg: msg },
+        data: null,
         status: "Please fill all required fields.",
       };
     } else {

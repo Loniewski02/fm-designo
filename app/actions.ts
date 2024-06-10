@@ -10,6 +10,7 @@ export async function FormSubmit(prevState: any, formData: any) {
   const data = await res.json();
   if (data.data) {
     const formData = data.data;
+    if (!process.env.EMAIL) return prevState;
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       service: "gmail",
@@ -19,20 +20,18 @@ export async function FormSubmit(prevState: any, formData: any) {
       },
     });
 
-    if (!process.env.EMAIL) return prevState;
-
     const content = `Hello ${formData.name} <br /><br />
       Thank you for contacting us. We will contact you soon.<br /><br />
       Best regards, <br /><br />
       Loniewski02
     `;
 
-    const info = await transporter.sendMail({
+    const info = {
       from: process.env.EMAIL,
       to: formData.email,
       subject: "Designo - contact form ✔",
       html: content,
-    });
+    };
 
     await new Promise((resolve, reject) => {
       transporter.sendMail(info, (err) => {

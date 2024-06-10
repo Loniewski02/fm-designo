@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input:-webkit-autofill,
+  input:-webkit-autofill:enabled,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:enabled,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:enabled,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #1d1c1e;
+    -webkit-box-shadow: 0 0 0px 1000px #ffad9b inset;
+    box-shadow: 0 0 0px 1000px #ffad9b inset;
+    background-color: transparent;
+  }
+}
+
 @layer components {
   .link {
     @apply relative py-1 md:px-[1px];

@@ -3,7 +3,6 @@ import { useState } from "react";
 const useInput = (inpValidity: (value: string) => boolean) => {
   const [enteredValue, setEnteredValue] = useState<string>("");
   const [isTouched, setIsTouched] = useState<boolean>(false);
-  const [errorMsg, setErrorMsg] = useState("");
 
   const isValid = inpValidity(enteredValue);
   const hasError = isTouched && !isValid;
@@ -19,11 +18,6 @@ const useInput = (inpValidity: (value: string) => boolean) => {
 
   const inputBlurHandler = () => {
     setIsTouched(true);
-    if (enteredValue === "") {
-      setErrorMsg("Can’t be empty");
-    } else if (!inpValidity(enteredValue)) {
-      setErrorMsg("Please check again");
-    }
   };
 
   const reset = () => {
@@ -38,7 +32,6 @@ const useInput = (inpValidity: (value: string) => boolean) => {
     inputBlurHandler,
     inputValueHandler,
     reset,
-    errorMsg,
   };
 };
 

@@ -15,6 +15,8 @@ import changeImg from "@/public/assets/graphic-design/desktop/image-change.jpg";
 import boxedWaterImg from "@/public/assets/graphic-design/desktop/image-boxed-water.jpg";
 import scienceImg from "@/public/assets/graphic-design/desktop/image-science.jpg";
 
+import { phoneReg, emailReg } from "@/app/regex";
+
 export const WEB_DESIGN_PROJECTS: DesignProject[] = [
   {
     url: "#",
@@ -153,5 +155,32 @@ export const LOCATIONS: LocationT[] = [
       email: "contact@designo.uk",
     },
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7939.274827999082!2d-1.3368305006311725!3d53.72965336239145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487941000242e677%3A0xe99597c34f45ba11!2sWheldale%20Colliery%20Memorial!5e0!3m2!1spl!2spl!4v1717517756730!5m2!1spl!2spl",
+  },
+];
+
+export const INPUTS = [
+  {
+    id: "name",
+    type: "text",
+    label: "Name",
+    val: (val: string) => val.trim().length > 1,
+  },
+  {
+    id: "email",
+    type: "email",
+    label: "Email Address",
+    val: (val: string) => emailReg.test(val),
+  },
+  {
+    id: "phone",
+    type: "tel",
+    label: "Phone",
+    val: (val: string) => val === "" || phoneReg.test(val),
+  },
+  {
+    id: "msg",
+    type: "text",
+    label: "Message",
+    val: (val: string) => val.trim().length > 10,
   },
 ];

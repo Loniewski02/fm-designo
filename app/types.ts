@@ -32,3 +32,8 @@ type LocationT = {
   };
   map: string;
 };
+
+type FormDataType = {
+  status: string;
+  data: { name: string; email: string; phone: string; msg: string };
+};

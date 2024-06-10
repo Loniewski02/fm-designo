@@ -1,55 +1,67 @@
+import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+
+import useInput from "@/app/hooks/use-input";
+
 import ErrorIco from "@/public/assets/contact/desktop/icon-error.svg";
 
 type Props = {
   label: string;
   id: string;
   type: string;
-  hasError: boolean;
-  isValid: boolean;
-  message?: boolean;
-  onBlur: () => void;
-  onChange: (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>,
-  ) => void;
-  value: string;
-  errorMsg: string;
+  initial: boolean;
+  textarea?: boolean;
+  reset: boolean;
+  validity: (val: string) => boolean;
 };
 
 const FormBox: React.FC<Props> = ({
   label,
-  value,
-  onBlur,
-  onChange,
+  initial,
   id,
   type,
-  message,
-  errorMsg,
-  isValid,
-  hasError,
+  reset,
+  textarea,
+  validity,
 }) => {
-  const isEmpty = value === "";
+  const {
+    enteredValue,
+    isValid,
+    hasError,
+    inputValueHandler,
+    inputBlurHandler,
+    reset: inputReset,
+  } = useInput(validity);
+  const isEmpty = enteredValue === "";
+
+  useEffect(() => {
+    !initial && inputBlurHandler();
+  }, [initial]);
+
+  useEffect(() => {
+    reset && inputReset();
+  }, [reset]);
 
   return (
     <div className="group relative">
-      {!message && (
+      {!textarea && (
         <input
+          name={id}
           type={type}
           id={id}
-          onBlur={onBlur}
-          onChange={onChange}
-          value={value}
-          className="peer w-full bg-transparent px-[14px] pb-4 text-15 font-medium text-White outline-none autofill:bg-black  md:px-6"
+          value={enteredValue}
+          onBlur={inputBlurHandler}
+          onChange={inputValueHandler}
+          className="input-autofill peer w-full bg-transparent px-[14px] pb-4 text-15 font-medium text-White outline-none md:px-6"
         />
       )}
-      {message && (
+      {textarea && (
         <textarea
+          name={id}
           id={id}
-          onBlur={onBlur}
-          onChange={onChange}
-          value={value}
+          value={enteredValue}
+          onBlur={inputBlurHandler}
+          onChange={inputValueHandler}
           className="peer block min-h-16 w-full bg-transparent px-[14px] pb-4 text-15 font-medium text-White outline-none autofill:text-gray-600  md:px-6"
         />
       )}
@@ -77,7 +89,7 @@ const FormBox: React.FC<Props> = ({
             exit={{ x: 200 }}
             className="absolute right-0 top-0 flex translate-y-1/2 items-center gap-2 text-[12px] italic leading-[26px] text-White"
           >
-            {errorMsg}
+            {isEmpty ? "Can't be blank" : "Please check again"}
             <motion.span
               initial={{ y: -25, opacity: 0 }}
               transition={{ delay: 0.3 }}

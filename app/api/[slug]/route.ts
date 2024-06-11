@@ -1,10 +1,7 @@
 import { phoneReg, emailReg } from "@/app/regex";
 
 export async function POST(req: any, { params }: any) {
-  let res: FormDataType | { data: null; status: string } = {
-    data: { name: "", email: "", phone: "", msg: "" },
-    status: "Invalid Request",
-  };
+  let res: FormDataType | null;
   const slug = params.slug;
 
   if (slug === "post-form-data") {
@@ -20,14 +17,11 @@ export async function POST(req: any, { params }: any) {
       !(msg.trim().length > 10) ||
       !(phone === "" || phoneReg.test(phone))
     ) {
-      res = {
-        data: null,
-        status: "Please fill all required fields.",
-      };
+      res = null;
     } else {
       res = {
         data: { name: name, email: email, phone: phone, msg: msg },
-        status: "Saved Successfully!",
+        status: "success",
       };
     }
 

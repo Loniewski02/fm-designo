@@ -21,7 +21,7 @@ const ContactForm = () => {
   const [state, FormAction] = useFormState(FormSubmit, initialState);
 
   useEffect(() => {
-    if (state.status === "Saved Successfully!") {
+    if (state.status === "success") {
       setIsMessageShown(true);
       setReset(true);
       setInitial(true);

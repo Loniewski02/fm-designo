@@ -8,41 +8,44 @@ export async function FormSubmit(prevState: any, formData: any) {
   });
 
   const data = await res.json();
-  if (data.data) {
-    const formData = data.data;
-    if (!process.env.EMAIL) return prevState;
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASS,
-      },
-    });
+  if (!data) return prevState;
 
-    const content = `Hello ${formData.name} <br /><br />
+  const name = formData.get("name");
+  const email = formData.get("email");
+  if (!process.env.EMAIL || !process.env.PASS) return prevState;
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASS,
+    },
+  });
+
+  const content = `Hello ${name} <br /><br />
       Thank you for contacting us. We will contact you soon.<br /><br />
       Best regards, <br /><br />
       Loniewski02
     `;
 
-    const info = {
-      from: process.env.EMAIL,
-      to: formData.email,
-      subject: "Designo - contact form ✔",
-      html: content,
-    };
+  const info = {
+    from: process.env.EMAIL,
+    to: email,
+    subject: "Designo - contact form ✔",
+    html: content,
+  };
 
-    await new Promise((resolve, reject) => {
-      transporter.sendMail(info, (err) => {
-        if (err) {
-          console.error("there was an error: ", err);
-          reject(err);
-        } else {
-          resolve(null);
-        }
-      });
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(info, (err) => {
+      if (err) {
+        console.error("Error: ", err);
+        reject(err);
+      } else {
+        resolve(null);
+      }
     });
-  }
+  });
+
   return data;
 }

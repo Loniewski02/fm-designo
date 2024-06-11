@@ -2,7 +2,7 @@
 import nodemailer from "nodemailer";
 
 export async function FormSubmit(prevState: any, formData: any) {
-  const res = await fetch("../api/post-form-data", {
+  const res = await fetch(`${process.env.URL}`, {
     method: "POST",
     body: formData,
   });
@@ -25,8 +25,8 @@ export async function FormSubmit(prevState: any, formData: any) {
 
   const content = `Hello ${name} <br /><br />
       Thank you for contacting us. We will contact you soon.<br /><br />
-      Best regards, <br /><br />
-      Loniewski02
+      Best regards, <br />
+      <i>Loniewski02</i>
     `;
 
   const info = {
